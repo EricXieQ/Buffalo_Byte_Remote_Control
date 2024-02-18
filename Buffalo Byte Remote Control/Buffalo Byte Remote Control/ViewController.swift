@@ -10,9 +10,12 @@ import WebKit
 
 class ViewController: UIViewController {
     
+    var Aniket = "http://192.168.175.226/"
     
     @IBOutlet weak var WebView: WKWebView!
-    let Forward_url: String = "http://10.0.255.34/Forward"
+    var Forward_url: String {
+        return "\(Aniket)Forward"
+    }
     @IBAction func Forward(_ sender: Any) {
         
         let forwardRequest = NSURL(string: Forward_url)
@@ -20,21 +23,29 @@ class ViewController: UIViewController {
         WebView.load(request as URLRequest)
     }
     
-    let Right_url: String = "http://10.0.255.34/Right"
+    var Right_url: String {
+        return "\(Aniket)Right"
+    }
     @IBAction func Right(_ sender: Any) {
         let rightRequest = NSURL(string: Right_url)
         let request = NSURLRequest(url: rightRequest! as URL)
         WebView.load(request as URLRequest)
     }
     
-    let Left_url: String = "http://10.0.255.34/Left"
+    var Left_url: String {
+        return "\(Aniket)Left"
+    }
+
     @IBAction func Left(_ sender: Any) {
         let leftRequest = NSURL(string: Left_url)
         let request = NSURLRequest(url: leftRequest! as URL)
         WebView.load(request as URLRequest)
     }
     
-    let Backward_url: String = "http://10.0.255.34/Backward"
+    var Backward_url: String {
+        return "\(Aniket)Backward"
+    }
+
     @IBAction func Backward(_ sender: Any) {
         let backwardRequest = NSURL(string: Backward_url)
         let request = NSURLRequest(url: backwardRequest! as URL)
@@ -42,7 +53,9 @@ class ViewController: UIViewController {
         
     }
     
-    let Stop_url: String = "http://10.0.255.34/Stop"
+    var Stop_url: String {
+        return "\(Aniket)Stop"
+    }
     @IBAction func Stop(_ sender: Any) {
         let stopRequest = NSURL(string: Stop_url)
         let request = NSURLRequest(url: stopRequest! as URL)
